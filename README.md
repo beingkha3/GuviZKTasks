@@ -4,8 +4,8 @@ This repository contains tasks and projects completed as part of the Guvi ZK (Ze
 
 ## Structure
 
-- **Task-1/**: [Brief description of Task-1]
-- **Task-2/**: [Brief description of Task-2]
+- **Task-1/**
+- **Task-2/**
 
 ## Technologies Used
 
@@ -18,6 +18,3 @@ This repository contains tasks and projects completed as part of the Guvi ZK (Ze
 1. Clone the repository.
 2. Open the HTML files in a web browser.
 
-## License
-
-[Add license if applicable]
