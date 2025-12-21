@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+  <title>WanderWiz — Travel Booking</title>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <!-- NAVBAR -->
+  <header class="bg-white shadow-sm sticky top-0 z-40">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <div class="text-2xl font-bold text-rose-600">WanderWiz</div>
+        <nav class="hidden md:flex gap-6 text-slate-600">
+          <a href="#deals" class="hover:text-slate-900">Deals</a>
+          <a href="#plans" class="hover:text-slate-900">Plans</a>
+          <a href="#blog" class="hover:text-slate-900">Blog</a>
+          <a href="#testimonials" class="hover:text-slate-900">Testimonials</a>
+        </nav>
+      </div>
+      <div class="flex items-center gap-4">
+        <a class="hidden md:inline-block px-4 py-2 border rounded-md" href="#">Sign in</a>
+        <button id="mobile-menu-btn" class="md:hidden px-2 py-2 rounded-md">
+          <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile nav -->
+    <nav id="mobile-menu" class="hidden md:hidden bg-white border-t">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="#deals">Deals</a>
+        <a href="#plans">Plans</a>
+        <a href="#blog">Blog</a>
+        <a href="#testimonials">Testimonials</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero container mx-auto px-6 py-12 grid md:grid-cols-2 gap-8 items-center">
+    <div>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Find your next adventure with <span class="text-rose-600">Wanderly</span></h1>
+      <p class="mt-4 text-slate-600">Hand-picked deals, personalized plans, and all-in-one booking for the perfect getaway.</p>
+      <div class="mt-6 flex gap-3">
+        <input id="search" class="flex-grow px-4 py-3 rounded-md border" placeholder="Where do you want to go?" />
+        <button id="searchBtn" class="px-5 py-3 bg-rose-600 text-white rounded-md">Search</button>
+      </div>
+      <div class="mt-6 text-med text-slate-500">Popular: Bali · Paris · New York</div>
+    </div>
+    <div class="rounded-xl overflow-hidden shadow-lg bg-white">
+      <img src="resources/paris.svg" alt="Paris" class="w-full h-72 object-cover" />
+    </div>
+  </section>
+
+  <!-- THINGS YOU NEED TO DO -->
+  <section class="container mx-auto px-4 py-6">
+    <h2 class="text-2xl font-bold">Things You Need To Do</h2>
+    <p class="text-slate-600 mt-2">A simple checklist to get your trip ready.</p>
+    <div class="mt-6 grid md:grid-cols-3 gap-6">
+      <div class="p-6 bg-white rounded-lg shadow">
+        <h3 class="font-semibold">1. Choose Destination</h3>
+        <p class="text-sm mt-2 text-slate-600">Browse personalized recommendations and deals.</p>
+      </div>
+      <div class="p-6 bg-white rounded-lg shadow">
+        <h3 class="font-semibold">2. Pick a Plan</h3>
+        <p class="text-sm mt-2 text-slate-600">Select from curated vacation plans for every taste.</p>
+      </div>
+      <div class="p-6 bg-white rounded-lg shadow">
+        <h3 class="font-semibold">3. Book & Go</h3>
+        <p class="text-sm mt-2 text-slate-600">Secure your spot with instant booking and easy payments.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXCLUSIVE DEALS CAROUSEL -->
+  <section id="deals" class="container mx-auto px-4 py-6">
+    <div class="flex items-center justify-between">
+      <h2 class="text-2xl font-bold">Exclusive Deals & Discounts</h2>
+      <div class="flex gap-2">
+        <button class="btn-prev z-20 relative px-3 py-2 bg-white rounded shadow">‹</button>
+        <button class="btn-next z-20 relative px-3 py-2 bg-white rounded shadow">›</button>
+      </div>
+    </div>
+
+    <div id="deals-carousel" class="mt-6 relative overflow-hidden">
+      <div class="carousel-track flex gap-1 transition-transform duration-1000">
+        <!-- Card 1 -->
+        <div class="deal-card min-w-full md:min-w-1/3 bg-white rounded-lg shadow overflow-hidden relative">
+          <img class="w-full h-80 object-cover cursor-pointer deal-img" data-destination="Paris" data-price="89,999" src="resources/paris.svg" alt="Paris" />
+          <div class="p-10 flex justify-between items-center">
+            <div>
+              <h3 class="font-semibold">Paris Getaway</h3>
+              <p class="text-sm text-slate-600">3 nights · Flights included</p>
+            </div>
+            <div class="text-right">
+              <div class="text-lg font-bold">Rs89,999</div>
+              <button class="mt-2 px-3 py-1 bg-rose-600 text-white rounded book-btn" data-destination="Paris" data-price="89,999">Book</button>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="deal-card min-w-full md:min-w-1/3 bg-white rounded-lg shadow overflow-hidden relative">
+          <img class="w-full h-80 object-cover cursor-pointer deal-img" data-destination="Bali" data-price="84,999" src="resources/bali.svg" alt="Bali" />
+          <div class="p-10 flex justify-between items-center">
+            <div>
+              <h3 class="font-semibold">Bali Retreat</h3>
+              <p class="text-sm text-slate-600">5 nights · Resort stay</p>
+            </div>
+            <div class="text-right">
+              <div class="text-lg font-bold">Rs84,999</div>
+              <button class="mt-2 px-3 py-1 bg-rose-600 text-white rounded book-btn" data-destination="Bali" data-price="84,999">Book</button>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="deal-card min-w-full md:min-w-1/3 bg-white rounded-lg shadow overflow-hidden relative">
+          <img class="w-full h-80 object-cover cursor-pointer deal-img" data-destination="New York" data-price="1,51,999" src="resources/nyc.svg" alt="New York" />
+          <div class="p-10 flex justify-between items-center">
+            <div>
+              <h3 class="font-semibold">NYC Escape</h3>
+              <p class="text-sm text-slate-600">4 nights · City tour</p>
+            </div>
+            <div class="text-right">
+              <div class="text-lg font-bold">Rs1,51,999</div>
+              <button class="mt-2 px-3 py-1 bg-rose-600 text-white rounded book-btn" data-destination="New York" data-price="1,51,999">Book</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- BEST VACATION PLANS -->
+  <section id="plans" class="container mx-auto px-6 py-10">
+    <div class="flex items-center justify-between">
+      <h2 class="text-2xl font-bold">Best Vacation Plans</h2>
+      <div class="flex gap-2">
+        <button id="plan-prev" class="px-3 py-2 bg-white rounded shadow">‹</button>
+        <button id="plan-next" class="px-3 py-2 bg-white rounded shadow">›</button>
+      </div>
+    </div>
+
+    <div id="plans-carousel" class="mt-6 relative overflow-hidden">
+      <div class="plan-track flex gap-6 transition-transform duration-400">
+        <div class="plan-card min-w-full md:min-w-1/3 bg-white rounded-lg shadow p-6">
+          <h3 class="font-bold">Romantic Europe</h3>
+          <p class="text-sm text-slate-600 mt-2">10 days · Multiple cities · Guided tours</p>
+          <div class="mt-4 font-semibold">From Rs2,09,999</div>
+          <button class="mt-4 px-4 py-2 bg-rose-600 text-white rounded">View Plan</button>
+        </div>
+        <div class="plan-card min-w-full md:min-w-1/3 bg-white rounded-lg shadow p-6">
+          <h3 class="font-bold">Tropical Escape</h3>
+          <p class="text-sm text-slate-600 mt-2">7 days · Beach resort · Spa</p>
+          <div class="mt-4 font-semibold">From Rs1,51,999</div>
+          <button class="mt-4 px-4 py-2 bg-rose-600 text-white rounded">View Plan</button>
+        </div>
+        <div class="plan-card min-w-full md:min-w-1/3 bg-white rounded-lg shadow p-6">
+          <h3 class="font-bold">Urban Explorer</h3>
+          <p class="text-sm text-slate-600 mt-2">5 days · City highlights · Food tours</p>
+          <div class="mt-4 font-semibold">From Rs89,999</div>
+          <button class="mt-4 px-4 py-2 bg-rose-600 text-white rounded">View Plan</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="container mx-auto px-6 py-10">
+    <h2 class="text-2xl font-bold">What Travelers Say</h2>
+    <div class="mt-6 grid md:grid-cols-3 gap-6">
+      <div class="p-6 bg-white rounded-lg shadow">
+        <p class="text-slate-600">“Amazing service — everything was seamless. Highly recommend!”</p>
+        <div class="mt-3 font-semibold">— Alex</div>
+      </div>
+      <div class="p-6 bg-white rounded-lg shadow">
+        <p class="text-slate-600">“Best deals we found — really saved money on our honeymoon.”</p>
+        <div class="mt-3 font-semibold">— Priya</div>
+      </div>
+      <div class="p-6 bg-white rounded-lg shadow">
+        <p class="text-slate-600">“Great itineraries and friendly support.”</p>
+        <div class="mt-3 font-semibold">— Marcus</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST BLOG -->
+  <section id="blog" class="container mx-auto px-6 py-10">
+    <h2 class="text-2xl font-bold">Latest from the Blog</h2>
+    <div class="mt-6 grid md:grid-cols-3 gap-6">
+      <article class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="resources/blog1.svg" alt="Blog" class="w-full h-40 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold">How to Pack Light for Long Trips</h3>
+          <p class="text-sm text-slate-600 mt-2">Tips to travel smart and avoid extra baggage fees.</p>
+        </div>
+      </article>
+      <article class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="resources/paris.svg" alt="Blog" class="w-full h-40 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold">Top 10 Cafes in Paris</h3>
+          <p class="text-sm text-slate-600 mt-2">Where to find the best croissants and coffee.</p>
+        </div>
+      </article>
+      <article class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="resources/bali.svg" alt="Blog" class="w-full h-40 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold">A Local’s Guide to Bali</h3>
+          <p class="text-sm text-slate-600 mt-2">Hidden beaches, temples and must-try food.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-white mt-10">
+    <div class="container mx-auto px-6 py-10 grid md:grid-cols-3 gap-6">
+      <div>
+        <h4 class="font-bold text-xl">WanderWiz</h4>
+        <p class="text-sm mt-2 text-slate-300">Make travel easy with curated deals and support every step of the way.</p>
+      </div>
+      <div>
+        <h5 class="font-semibold">Quick Links</h5>
+        <ul class="mt-2 text-sm text-slate-300">
+          <li>Deals</li>
+          <li>Plans</li>
+          <li>Blog</li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="font-semibold">Subscribe</h5>
+        <form id="subscribe-form" class="mt-2 flex gap-2">
+          <input type="email" id="subscribe-email" placeholder="Email address" required class="px-3 py-2 rounded text-slate-800 flex-grow" />
+          <button class="px-4 py-2 bg-rose-600 rounded text-white">Subscribe</button>
+        </form>
+        <p id="subscribe-msg" class="mt-2 text-sm text-emerald-300 hidden">Thanks for subscribing!</p>
+      </div>
+    </div>
+    <div class="border-t border-slate-800 text-slate-400 text-sm py-4">© 2025 WanderWiz. All rights reserved.</div>
+  </footer>
+
+  <!-- BOOKING MODAL (moved to body end, higher z-index) -->
+  <div id="booking-modal" role="dialog" aria-modal="true" aria-hidden="true" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[9999]">
+    <div class="bg-white rounded-lg w-11/12 md:w-1/3 p-6">
+      <button id="close-modal" aria-label="Close booking dialog" class="float-right text-slate-500">✕</button>
+      <h3 class="text-xl font-bold mt-2">Book Trip</h3>
+      <p id="modal-destination" class="text-slate-600 mt-2">Destination — <span class="font-semibold"></span></p>
+      <form id="booking-form" class="mt-4">
+        <label class="block text-sm">Name</label>
+        <input required class="w-full px-3 py-2 border rounded mt-1" name="name" />
+        <label class="block text-sm mt-3">Email</label>
+        <input required class="w-full px-3 py-2 border rounded mt-1" name="email" type="email" />
+        <div class="mt-4 flex justify-end gap-2">
+          <button type="button" id="cancel-book" class="px-4 py-2 border rounded">Cancel</button>
+          <button type="submit" class="px-4 py-2 bg-rose-600 text-white rounded">Confirm & Pay</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

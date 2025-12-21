@@ -1,0 +1,28 @@
+/* Custom styles for WanderWiz landing page */
+:root{
+  --accent: #f43f5e;
+}
+.container{max-width:1100px}
+
+.hero img{height:360px}
+.carousel-track > .deal-card{width:auto}
+.plan-track > .plan-card{width:100%}
+
+/* Make md:min-w-1/3 behave like one-third on md and above */
+@media(min-width:768px){
+  .md\:min-w-1\/3{min-width:33.333333%}
+}
+
+/* subtle focus styles */
+input:focus, button:focus{outline:none; box-shadow:0 0 0 3px rgba(244,63,94,0.12)}
+
+/* small adjustments */
+#booking-modal .bg-white{position:relative}
+
+/* Accessibility improvements */
+button{cursor:pointer}
+
+/* make hero responsive */
+@media(max-width:767px){
+  .hero img{height:220px}
+}
