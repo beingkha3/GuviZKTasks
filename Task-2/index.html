@@ -2,265 +2,444 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css" />
-  <title>WanderWiz — Travel Booking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trabook – Travel Landing Page</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Volkhov:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css"/>
 </head>
-<body class="bg-slate-50 text-slate-800">
-  <!-- NAVBAR -->
-  <header class="bg-white shadow-sm sticky top-0 z-40">
-    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-4">
-        <div class="text-2xl font-bold text-rose-600">WanderWiz</div>
-        <nav class="hidden md:flex gap-6 text-slate-600">
-          <a href="#deals" class="hover:text-slate-900">Deals</a>
-          <a href="#plans" class="hover:text-slate-900">Plans</a>
-          <a href="#blog" class="hover:text-slate-900">Blog</a>
-          <a href="#testimonials" class="hover:text-slate-900">Testimonials</a>
-        </nav>
-      </div>
-      <div class="flex items-center gap-4">
-        <a class="hidden md:inline-block px-4 py-2 border rounded-md" href="#">Sign in</a>
-        <button id="mobile-menu-btn" class="md:hidden px-2 py-2 rounded-md">
-          <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-        </button>
-      </div>
-    </div>
-    <!-- Mobile nav -->
-    <nav id="mobile-menu" class="hidden md:hidden bg-white border-t">
-      <div class="px-6 py-4 flex flex-col gap-3">
-        <a href="#deals">Deals</a>
-        <a href="#plans">Plans</a>
-        <a href="#blog">Blog</a>
-        <a href="#testimonials">Testimonials</a>
-      </div>
-    </nav>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero container mx-auto px-6 py-12 grid md:grid-cols-2 gap-8 items-center">
-    <div>
-      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Find your next adventure with <span class="text-rose-600">Wanderly</span></h1>
-      <p class="mt-4 text-slate-600">Hand-picked deals, personalized plans, and all-in-one booking for the perfect getaway.</p>
-      <div class="mt-6 flex gap-3">
-        <input id="search" class="flex-grow px-4 py-3 rounded-md border" placeholder="Where do you want to go?" />
-        <button id="searchBtn" class="px-5 py-3 bg-rose-600 text-white rounded-md">Search</button>
-      </div>
-      <div class="mt-6 text-med text-slate-500">Popular: Bali · Paris · New York</div>
-    </div>
-    <div class="rounded-xl overflow-hidden shadow-lg bg-white">
-      <img src="resources/paris.svg" alt="Paris" class="w-full h-72 object-cover" />
-    </div>
-  </section>
-
-  <!-- THINGS YOU NEED TO DO -->
-  <section class="container mx-auto px-4 py-6">
-    <h2 class="text-2xl font-bold">Things You Need To Do</h2>
-    <p class="text-slate-600 mt-2">A simple checklist to get your trip ready.</p>
-    <div class="mt-6 grid md:grid-cols-3 gap-6">
-      <div class="p-6 bg-white rounded-lg shadow">
-        <h3 class="font-semibold">1. Choose Destination</h3>
-        <p class="text-sm mt-2 text-slate-600">Browse personalized recommendations and deals.</p>
-      </div>
-      <div class="p-6 bg-white rounded-lg shadow">
-        <h3 class="font-semibold">2. Pick a Plan</h3>
-        <p class="text-sm mt-2 text-slate-600">Select from curated vacation plans for every taste.</p>
-      </div>
-      <div class="p-6 bg-white rounded-lg shadow">
-        <h3 class="font-semibold">3. Book & Go</h3>
-        <p class="text-sm mt-2 text-slate-600">Secure your spot with instant booking and easy payments.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXCLUSIVE DEALS CAROUSEL -->
-  <section id="deals" class="container mx-auto px-4 py-6">
-    <div class="flex items-center justify-between">
-      <h2 class="text-2xl font-bold">Exclusive Deals & Discounts</h2>
-      <div class="flex gap-2">
-        <button class="btn-prev z-20 relative px-3 py-2 bg-white rounded shadow">‹</button>
-        <button class="btn-next z-20 relative px-3 py-2 bg-white rounded shadow">›</button>
-      </div>
-    </div>
-
-    <div id="deals-carousel" class="mt-6 relative overflow-hidden">
-      <div class="carousel-track flex gap-1 transition-transform duration-1000">
-        <!-- Card 1 -->
-        <div class="deal-card min-w-full md:min-w-1/3 bg-white rounded-lg shadow overflow-hidden relative">
-          <img class="w-full h-80 object-cover cursor-pointer deal-img" data-destination="Paris" data-price="89,999" src="resources/paris.svg" alt="Paris" />
-          <div class="p-10 flex justify-between items-center">
-            <div>
-              <h3 class="font-semibold">Paris Getaway</h3>
-              <p class="text-sm text-slate-600">3 nights · Flights included</p>
-            </div>
-            <div class="text-right">
-              <div class="text-lg font-bold">Rs89,999</div>
-              <button class="mt-2 px-3 py-1 bg-rose-600 text-white rounded book-btn" data-destination="Paris" data-price="89,999">Book</button>
-            </div>
-          </div>
+<body>
+<!-- HERO -->
+<section class="hero">
+    <header class="site-header">
+        <!-- Nav -->
+        <div class="container nav">
+            <img class="brand" src="resources/logo.png" alt="Trabook Logo"/>
+            <button class="hamburger" aria-label="Toggle menu">☰</button>
+            <nav class="nav-menu">
+                <div class="navlinks">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Destination</a>
+                    <a href="#">Tour</a>
+                    <a href="#">Blog</a>        
+                </div>
+                <div class="navcta">
+                    <a href="#" class="login">Login</a>
+                    <a href="#" class="signup">Sign up</a>
+                </div>
+            </nav>
         </div>
-        <!-- Card 2 -->
-        <div class="deal-card min-w-full md:min-w-1/3 bg-white rounded-lg shadow overflow-hidden relative">
-          <img class="w-full h-80 object-cover cursor-pointer deal-img" data-destination="Bali" data-price="84,999" src="resources/bali.svg" alt="Bali" />
-          <div class="p-10 flex justify-between items-center">
-            <div>
-              <h3 class="font-semibold">Bali Retreat</h3>
-              <p class="text-sm text-slate-600">5 nights · Resort stay</p>
-            </div>
-            <div class="text-right">
-              <div class="text-lg font-bold">Rs84,999</div>
-              <button class="mt-2 px-3 py-1 bg-rose-600 text-white rounded book-btn" data-destination="Bali" data-price="84,999">Book</button>
-            </div>
-          </div>
+    </header>
+<!-- HERO CONTENT -->
+<div class="container hero-grid">
+    <div class="hero-text">
+        <h1>Get started your exciting <span>journey</span> with us.</h1>
+        <p>A team of experienced tourism professionals will provide you with the best advice and tips for your desired place.</p>
+        <a class="btn-outline" href="#">Discover Now</a>
+    </div>
+
+    <div class="hero-visual-wrapper">
+  <!-- dotted plane path (behind everything) -->
+  <img class="hero-bg-plane" src="resources/Element (3).png" alt="" />
+
+  <!-- main hero composition (man + orange shape) -->
+  <img class="hero-main" src="resources/Group 1000003524.png" alt="Traveler" />
+
+  <!-- floating badges -->
+  <img class="hero-badge hero-badge--award" src="resources/Card-1 (1).png" alt="Best Tour Awards" />
+  <img class="hero-badge hero-badge--explore" src="resources/Card-2.png" alt="Explore" />
+  <img class="hero-badge hero-badge--review" src="resources/Card-3 (1).png" alt="27K Customer Review" />
+</div>
+
+</div>
+    <!-- SEARCH BAR -->
+    <div class="container hero-search">
+    <div class="searchbar">
+        <div class="field">
+        <label>Location</label>
+        <div class="value">Where are you going</div>
         </div>
-        <!-- Card 3 -->
-        <div class="deal-card min-w-full md:min-w-1/3 bg-white rounded-lg shadow overflow-hidden relative">
-          <img class="w-full h-80 object-cover cursor-pointer deal-img" data-destination="New York" data-price="1,51,999" src="resources/nyc.svg" alt="New York" />
-          <div class="p-10 flex justify-between items-center">
-            <div>
-              <h3 class="font-semibold">NYC Escape</h3>
-              <p class="text-sm text-slate-600">4 nights · City tour</p>
-            </div>
-            <div class="text-right">
-              <div class="text-lg font-bold">Rs1,51,999</div>
-              <button class="mt-2 px-3 py-1 bg-rose-600 text-white rounded book-btn" data-destination="New York" data-price="1,51,999">Book</button>
+        <div class="field">
+        <label>Date</label>
+        <div class="value">When you will go</div>
+        </div>
+        <div class="field">
+        <label>Guest</label>
+        <div class="value">Number of guest</div>
+        </div>
+        <button class="searchbtn">Explore Now</button>
+    </div>
+    </div>
+</section>
+
+<!-- THINGS TO DO -->
+<section class="section-alt">
+  <div class="container">
+    <div class="section-title section-title--things">
+  <h2>Things you need <span>to do</span></h2>
+  <p>We ensure that you’ll embark on a perfectly planned, safe vacation at a price you can afford.</p>
+  <img class="section-img" src="resources/Element.png" alt="Aeroplanes"/>
+</div>
+
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>Sign Up</h3>
+        <p>Completes all the work associated with planning and processing.</p>
+      </div>
+      <div class="card">
+        <h3>Worth of Money</h3>
+        <p>After successful access then book from exclusive deals & pricing.</p>
+      </div>
+      <div class="card">
+        <h3>Exciting Travel</h3>
+        <p>Start and explore a wide range of exciting travel experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEALS -->
+<section class="section deals">
+  <div class="container">
+    <div class="section-title">
+      <h2>Exclusive <span>deals & discounts</span></h2>
+      <p>Discover our fantastic early booking discounts<br>& start planning your journey.</p>
+    </div>
+
+    <div class="deals-grid">
+      <!-- 1 -->
+      <article class="deal">
+        <div class="deal__img deal__img--1"></div>
+
+        <div class="deal__body">
+          <div class="deal__top">
+            <h4>Madrid</h4>
+            <div class="deal__rating">
+              <span class="star">★</span><span>4.8</span>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
+          <div class="deal__mid">
+            <div class="deal__loc">📍 Spain</div>
+          </div>
 
-
-  <!-- BEST VACATION PLANS -->
-  <section id="plans" class="container mx-auto px-6 py-10">
-    <div class="flex items-center justify-between">
-      <h2 class="text-2xl font-bold">Best Vacation Plans</h2>
-      <div class="flex gap-2">
-        <button id="plan-prev" class="px-3 py-2 bg-white rounded shadow">‹</button>
-        <button id="plan-next" class="px-3 py-2 bg-white rounded shadow">›</button>
-      </div>
-    </div>
-
-    <div id="plans-carousel" class="mt-6 relative overflow-hidden">
-      <div class="plan-track flex gap-6 transition-transform duration-400">
-        <div class="plan-card min-w-full md:min-w-1/3 bg-white rounded-lg shadow p-6">
-          <h3 class="font-bold">Romantic Europe</h3>
-          <p class="text-sm text-slate-600 mt-2">10 days · Multiple cities · Guided tours</p>
-          <div class="mt-4 font-semibold">From Rs2,09,999</div>
-          <button class="mt-4 px-4 py-2 bg-rose-600 text-white rounded">View Plan</button>
-        </div>
-        <div class="plan-card min-w-full md:min-w-1/3 bg-white rounded-lg shadow p-6">
-          <h3 class="font-bold">Tropical Escape</h3>
-          <p class="text-sm text-slate-600 mt-2">7 days · Beach resort · Spa</p>
-          <div class="mt-4 font-semibold">From Rs1,51,999</div>
-          <button class="mt-4 px-4 py-2 bg-rose-600 text-white rounded">View Plan</button>
-        </div>
-        <div class="plan-card min-w-full md:min-w-1/3 bg-white rounded-lg shadow p-6">
-          <h3 class="font-bold">Urban Explorer</h3>
-          <p class="text-sm text-slate-600 mt-2">5 days · City highlights · Food tours</p>
-          <div class="mt-4 font-semibold">From Rs89,999</div>
-          <button class="mt-4 px-4 py-2 bg-rose-600 text-white rounded">View Plan</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section id="testimonials" class="container mx-auto px-6 py-10">
-    <h2 class="text-2xl font-bold">What Travelers Say</h2>
-    <div class="mt-6 grid md:grid-cols-3 gap-6">
-      <div class="p-6 bg-white rounded-lg shadow">
-        <p class="text-slate-600">“Amazing service — everything was seamless. Highly recommend!”</p>
-        <div class="mt-3 font-semibold">— Alex</div>
-      </div>
-      <div class="p-6 bg-white rounded-lg shadow">
-        <p class="text-slate-600">“Best deals we found — really saved money on our honeymoon.”</p>
-        <div class="mt-3 font-semibold">— Priya</div>
-      </div>
-      <div class="p-6 bg-white rounded-lg shadow">
-        <p class="text-slate-600">“Great itineraries and friendly support.”</p>
-        <div class="mt-3 font-semibold">— Marcus</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LATEST BLOG -->
-  <section id="blog" class="container mx-auto px-6 py-10">
-    <h2 class="text-2xl font-bold">Latest from the Blog</h2>
-    <div class="mt-6 grid md:grid-cols-3 gap-6">
-      <article class="bg-white rounded-lg shadow overflow-hidden">
-        <img src="resources/blog1.svg" alt="Blog" class="w-full h-40 object-cover" />
-        <div class="p-4">
-          <h3 class="font-semibold">How to Pack Light for Long Trips</h3>
-          <p class="text-sm text-slate-600 mt-2">Tips to travel smart and avoid extra baggage fees.</p>
+          <div class="deal__bottom">
+            <span class="deal__old">$950</span>
+            <span class="deal__new">$850</span>
+          </div>
         </div>
       </article>
-      <article class="bg-white rounded-lg shadow overflow-hidden">
-        <img src="resources/paris.svg" alt="Blog" class="w-full h-40 object-cover" />
-        <div class="p-4">
-          <h3 class="font-semibold">Top 10 Cafes in Paris</h3>
-          <p class="text-sm text-slate-600 mt-2">Where to find the best croissants and coffee.</p>
+
+      <!-- 2 (with Book Now overlay) -->
+      <article class="deal">
+        <div class="deal__img deal__img--2">
+          <button class="deal__cta">Book Now</button>
+        </div>
+
+        <div class="deal__body">
+          <div class="deal__top">
+            <h4>Firenze</h4>
+            <div class="deal__rating">
+              <span class="star">★</span><span>4.5</span>
+            </div>
+          </div>
+
+          <div class="deal__mid">
+            <div class="deal__loc">📍 Italy</div>
+          </div>
+
+          <div class="deal__bottom">
+            <span class="deal__old">$850</span>
+            <span class="deal__new">$750</span>
+          </div>
         </div>
       </article>
-      <article class="bg-white rounded-lg shadow overflow-hidden">
-        <img src="resources/bali.svg" alt="Blog" class="w-full h-40 object-cover" />
-        <div class="p-4">
-          <h3 class="font-semibold">A Local’s Guide to Bali</h3>
-          <p class="text-sm text-slate-600 mt-2">Hidden beaches, temples and must-try food.</p>
+
+      <!-- 3 -->
+      <article class="deal">
+        <div class="deal__img deal__img--3"></div>
+
+        <div class="deal__body">
+          <div class="deal__top">
+            <h4>Paris</h4>
+            <div class="deal__rating">
+              <span class="star">★</span><span>4.4</span>
+            </div>
+          </div>
+
+          <div class="deal__mid">
+            <div class="deal__loc">📍 France</div>
+          </div>
+
+          <div class="deal__bottom">
+            <span class="deal__old">$699</span>
+            <span class="deal__new">$599</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="deal">
+        <div class="deal__img deal__img--4"></div>
+
+        <div class="deal__body">
+          <div class="deal__top">
+            <h4>London</h4>
+            <div class="deal__rating">
+              <span class="star">★</span><span>4.8</span>
+            </div>
+          </div>
+
+          <div class="deal__mid">
+            <div class="deal__loc">📍 UK</div>
+          </div>
+
+          <div class="deal__bottom">
+            <span class="deal__old">$950</span>
+            <span class="deal__new">$850</span>
+          </div>
         </div>
       </article>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-slate-900 text-white mt-10">
-    <div class="container mx-auto px-6 py-10 grid md:grid-cols-3 gap-6">
-      <div>
-        <h4 class="font-bold text-xl">WanderWiz</h4>
-        <p class="text-sm mt-2 text-slate-300">Make travel easy with curated deals and support every step of the way.</p>
+    <div class="deals-nav">
+      <button class="nav-btn nav-btn--ghost" aria-label="Previous">←</button>
+      <button class="nav-btn nav-btn--accent" aria-label="Next">→</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- Vacation plans -->
+<!-- Vacation plans -->
+<section class="section vacation">
+  <div class="container container-vacation">
+    <div class="vacation-head">
+      <div class="section-title vacation-title">
+        <h2>Best <span>vacation plan</span></h2>
+        <p>Plan your perfect vacation with our travel agency. Choose among hundreds of all-inclusive offers!</p>
+        <img class="section-img2" src="resources/Element (1).png" alt="Trees"/>
       </div>
-      <div>
-        <h5 class="font-semibold">Quick Links</h5>
-        <ul class="mt-2 text-sm text-slate-300">
-          <li>Deals</li>
-          <li>Plans</li>
-          <li>Blog</li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="font-semibold">Subscribe</h5>
-        <form id="subscribe-form" class="mt-2 flex gap-2">
-          <input type="email" id="subscribe-email" placeholder="Email address" required class="px-3 py-2 rounded text-slate-800 flex-grow" />
-          <button class="px-4 py-2 bg-rose-600 rounded text-white">Subscribe</button>
-        </form>
-        <p id="subscribe-msg" class="mt-2 text-sm text-emerald-300 hidden">Thanks for subscribing!</p>
+
+      <div class="vacation-nav">
+        <button class="nav-btn nav-btn--ghost" aria-label="Previous">←</button>
+        <button class="nav-btn nav-btn--accent" aria-label="Next">→</button>
       </div>
     </div>
-    <div class="border-t border-slate-800 text-slate-400 text-sm py-4">© 2025 WanderWiz. All rights reserved.</div>
-  </footer>
 
-  <!-- BOOKING MODAL (moved to body end, higher z-index) -->
-  <div id="booking-modal" role="dialog" aria-modal="true" aria-hidden="true" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[9999]">
-    <div class="bg-white rounded-lg w-11/12 md:w-1/3 p-6">
-      <button id="close-modal" aria-label="Close booking dialog" class="float-right text-slate-500">✕</button>
-      <h3 class="text-xl font-bold mt-2">Book Trip</h3>
-      <p id="modal-destination" class="text-slate-600 mt-2">Destination — <span class="font-semibold"></span></p>
-      <form id="booking-form" class="mt-4">
-        <label class="block text-sm">Name</label>
-        <input required class="w-full px-3 py-2 border rounded mt-1" name="name" />
-        <label class="block text-sm mt-3">Email</label>
-        <input required class="w-full px-3 py-2 border rounded mt-1" name="email" type="email" />
-        <div class="mt-4 flex justify-end gap-2">
-          <button type="button" id="cancel-book" class="px-4 py-2 border rounded">Cancel</button>
-          <button type="submit" class="px-4 py-2 bg-rose-600 text-white rounded">Confirm & Pay</button>
+    <div class="grid-3 vacation-grid">
+      <article class="vacation-card">
+        <div class="vacation-img img5"></div>
+        <div class="vacation-body">
+          <div class="vacation-top">
+            <h4>Rome, Italy</h4>
+            <span class="vacation-price">$5,42k</span>
+          </div>
+          <div class="vacation-meta">
+            <span class="trip">✈ 10 Days Trip</span>
+            <span class="rating">4.8</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="vacation-card">
+        <div class="vacation-img img6"></div>
+        <div class="vacation-body">
+          <div class="vacation-top">
+            <h4>London, UK</h4>
+            <span class="vacation-price">$2,42k</span>
+          </div>
+          <div class="vacation-meta">
+            <span class="trip">✈ 07 Days Trip</span>
+            <span class="rating">4.7</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="vacation-card">
+        <div class="vacation-img img7"></div>
+        <div class="vacation-body">
+          <div class="vacation-top">
+            <h4>Osaka, Japan</h4>
+            <span class="vacation-price">$5,42k</span>
+          </div>
+          <div class="vacation-meta">
+            <span class="trip">✈ 10 Days Trip</span>
+            <span class="rating">4.8</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section-alt testimonials">
+  <div class="container testimonials-wrap">
+    <div class="testimonials-left">
+      <h2>What people say <span>about us.</span></h2>
+      <p>Our Clients send us bunch of smiles with our services and we love them.</p>
+
+      <div class="testimonials-nav">
+        <button class="nav-btn nav-btn--ghost" aria-label="Previous">←</button>
+        <button class="nav-btn nav-btn--accent" aria-label="Next">→</button>
+      </div>
+    </div>
+
+    <div class="testimonials-right">
+      <!-- optional doodle (if you have it) -->
+      <img class="testimonials-doodle" src="resources/Element (4).png" alt="" />
+
+
+      <div class="t-card t-card--front">
+        <div class="t-avatar">
+          <!-- replace with your avatar image if you have -->
+          <img src="resources\Image (4).png" alt="avatar">
+        </div>
+
+        <p class="t-quote">
+          “On the Windows talking painted pasture yet its express parties use. Sure last upon he same as knew next. Of believed or diverted no.”
+        </p>
+
+        <div class="t-name">Mike taylor</div>
+        <div class="t-meta">Lahore, Pakistan</div>
+      </div>
+
+      <div class="t-card t-card--back">
+        <div class="t-name muted">Chris Thomas</div>
+        <div class="t-meta muted">CEO of Red Button</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST BLOG -->
+<section class="section blog">
+  <div class="container">
+    <div class="section-title">
+      <h2>Get update with <span>latest blog</span></h2>
+    </div>
+
+    <div class="blog-grid">
+      <article class="blog-card">
+        <img class="blog-img" src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=900&q=80" alt="">
+        <h4>The Amazing Difference a Year of Travelling.</h4>
+        <div class="blog-date">July 27, 2021</div>
+      </article>
+
+      <article class="blog-card">
+        <img class="blog-img" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="">
+        <h4>Travel far enough, you meet yourself.</h4>
+        <div class="blog-date">July 27, 2021</div>
+      </article>
+
+      <article class="blog-card">
+        <img class="blog-img" src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=900&q=80" alt="">
+        <h4>How to Save Money While Visiting Africa.</h4>
+        <div class="blog-date">July 27, 2021</div>
+      </article>
+
+      <article class="blog-card">
+        <img class="blog-img" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80" alt="">
+        <h4>Reflections on 5 Months of Travel: Time to Hang</h4>
+        <div class="blog-date">July 27, 2021</div>
+      </article>
+    </div>
+
+    <div class="blog-dots">
+      <span class="dot"></span>
+      <span class="dot dot--active"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</section>
+
+
+<!-- SUBSCRIBE -->
+<section class="subscribe">
+  <div class="container">
+    <div class="subscribe-box">
+      <!-- top-right artwork (reuse your existing tree/palm asset) -->
+      <img class="subscribe-art subscribe-art--trees" src="resources/Element (1).png" alt="" />
+
+      <h2>Subscribe and get exclusive<br/>deals & offer</h2>
+
+      <form class="subscribe-form">
+        <div class="subscribe-input">
+          <span class="mail-ico">✉</span>
+          <input type="email" placeholder="Enter your mail" />
+          <button type="submit">Subscribe</button>
         </div>
       </form>
     </div>
   </div>
+</section>
 
-  <script src="script.js"></script>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <img class="brand" src="resources/logo.png" alt="Trabook Logo"/>
+      <p>Book your trip in minute, get full control for much longer.</p>
+      <div class="footer-social">
+  <a class="soc" href="#" aria-label="Facebook">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v3H7v3h3v7h3v-7h3l1-3h-4v-3c0-.6.4-1 1-1z"/>
+    </svg>
+  </a>
+
+  <a class="soc soc--active" href="#" aria-label="Instagram">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.5A5.5 5.5 0 1 1 6.5 14 5.5 5.5 0 0 1 12 8.5zm0 2A3.5 3.5 0 1 0 15.5 14 3.5 3.5 0 0 0 12 10.5zM18 6.8a1.2 1.2 0 1 1-1.2 1.2A1.2 1.2 0 0 1 18 6.8z"/>
+    </svg>
+  </a>
+
+  <a class="soc" href="#" aria-label="Twitter">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M18.9 2H22l-6.8 7.8L23 22h-6.6l-5.2-6.8L5.1 22H2l7.3-8.4L1 2h6.7l4.7 6.1L18.9 2zm-1.2 18h1.8L6.7 3.9H4.8L17.7 20z"/>
+    </svg>
+  </a>
+</div>
+
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="#">About</a>
+      <a href="#">Careers</a>
+      <a href="#">Logistic</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="#">Help/FAQ</a>
+      <a href="#">Press</a>
+      <a href="#">Affiliates</a>
+    </div>
+    <div>
+      <h4>More</h4>
+      <a href="#">Press Centre</a>
+      <a href="#">Our Blog</a>
+      <a href="#">Low fare tips</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>Copyright, Trabook 2022. All rights reserved.</p>
+      <p>Terms & Conditions</p>
+    </div>
+  </div>
+
+    
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
