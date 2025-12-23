@@ -916,7 +916,7 @@ h1,h2,h3,h4{font-family:Volkhov,serif}
   display:grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 26px;
-  max-width: 1060px;
+  max-width: 800px;
   margin: 34px auto 0;
 }
 
@@ -926,7 +926,7 @@ h1,h2,h3,h4{font-family:Volkhov,serif}
 
 .blog-img{
   width:100%;
-  height: 160px;
+  height: 180px;
   border-radius: 12px;
   object-fit: cover;
   display:block;
