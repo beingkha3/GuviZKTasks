@@ -13,6 +13,7 @@ This repository contains tasks and projects completed as part of the Guvi ZK (Ze
 - HTML
 - CSS
 - JavaScript
+- Tailwind CSS
 
 ## How to Run
 
