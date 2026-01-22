@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0ea5a4">
+  <title>Memory Game</title>
+  <!-- Preconnect fonts for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Memory Game</h1>
+    <button id="restartBtn">Restart</button>
+  </header>
+
+  <section id="stats">
+    <span id="moves">Moves: 0</span>
+    <span id="timer">Time: 00:00</span>
+  </section>
+
+  <main id="board" class="board"></main>
+
+  <!-- Modal -->
+  <div id="resultModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+      <h2 id="modalTitle">You won!</h2>
+      <p id="modalStats">Moves: 0 • Time: 00:00</p>
+      <div class="modal-actions">
+        <button id="playAgainBtn">Play Again</button>
+        <button id="closeModalBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
