@@ -25,6 +25,23 @@
 
   <main id="board" class="board"></main>
 
+  <!-- Instructions Modal -->
+  <div id="instructionsModal" class="modal" aria-hidden="false">
+    <div class="modal-content" role="dialog" aria-labelledby="instructionsTitle" aria-modal="true">
+      <h2 id="instructionsTitle">How to Play Memory Game</h2>
+      <ul>
+        <li>Click on a card to flip it and reveal the symbol.</li>
+        <li>Click on a second card to try to find a match.</li>
+        <li>If the cards match, they stay flipped. If not, they flip back after a moment.</li>
+        <li>Find all matching pairs to win!</li>
+        <li>Try to complete the game in as few moves and as little time as possible.</li>
+      </ul>
+      <div class="modal-actions">
+        <button id="startGameBtn">Start Game</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Modal -->
   <div id="resultModal" class="modal" aria-hidden="true">
     <div class="modal-content" role="dialog" aria-labelledby="modalTitle" aria-modal="true">

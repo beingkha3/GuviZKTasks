@@ -10,6 +10,10 @@ const modalStats = document.getElementById("modalStats");
 const playAgainBtn = document.getElementById("playAgainBtn");
 const closeModalBtn = document.getElementById("closeModalBtn");
 
+// Instructions modal
+const instructionsModal = document.getElementById("instructionsModal");
+const startGameBtn = document.getElementById("startGameBtn");
+
 let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
@@ -148,13 +152,27 @@ function closeResultModal() {
   resultModal.setAttribute("aria-hidden", "true");
 }
 
+function closeInstructionsModal() {
+  if (!instructionsModal) return;
+  instructionsModal.classList.remove("open");
+  instructionsModal.setAttribute("aria-hidden", "true");
+  initGame(); // Start the game after closing instructions
+}
+
 // Modal events
 if (playAgainBtn) playAgainBtn.addEventListener("click", () => { closeResultModal(); initGame(); });
 if (closeModalBtn) closeModalBtn.addEventListener("click", closeResultModal);
+if (startGameBtn) startGameBtn.addEventListener("click", closeInstructionsModal);
 
 // Close modal on ESC
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeResultModal();
+  if (e.key === "Escape") {
+    if (instructionsModal && instructionsModal.classList.contains("open")) {
+      closeInstructionsModal();
+    } else {
+      closeResultModal();
+    }
+  }
 });
 
 // Click outside to close
@@ -163,6 +181,16 @@ if (resultModal) {
     if (e.target === resultModal) closeResultModal();
   });
 }
+if (instructionsModal) {
+  instructionsModal.addEventListener("click", (e) => {
+    if (e.target === instructionsModal) closeInstructionsModal();
+  });
+}
 
 restartBtn.addEventListener("click", initGame);
-initGame();
+
+// Show instructions on load
+if (instructionsModal) {
+  instructionsModal.classList.add("open");
+  instructionsModal.setAttribute("aria-hidden", "false");
+}
