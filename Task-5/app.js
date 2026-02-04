@@ -114,35 +114,40 @@ function renderList() {
 
   for (const e of filtered) {
     const li = document.createElement("li");
-    // ensure the list item can shrink on narrow screens
-    li.className = "bg-slate-900/40 border border-slate-700 rounded-xl p-4 flex items-center justify-between min-w-0";
+        li.className = "nb-card p-4 grid grid-cols-1 sm:grid-cols-[1fr,auto] gap-3 items-start min-w-0 overflow-visible " +
+          (e.type === "income" ? "border-l-4 border-l-emerald-400/60" : "border-l-4 border-l-rose-400/60");
 
     const left = document.createElement("div");
-    // allow truncation on small screens
-    left.className = "flex-grow min-w-0";
+    // left column: allow wrapping, avoid forcing truncation
+    left.className = "min-w-0";
 
     const desc = document.createElement("div");
-    desc.className = "font-semibold truncate";
+    desc.className = "font-semibold whitespace-normal break-words";
     desc.textContent = e.description;
 
     const tag = document.createElement("div");
-    tag.className = "text-sm text-slate-400 truncate";
-    tag.textContent = `${e.type.toUpperCase()} • ${new Date(e.createdAt).toLocaleString()}`;
+    // keep the tag short on small screens and allow tooltip for full timestamp
+    tag.className = "text-sm text-slate-400 whitespace-normal";
+    const fullTime = new Date(e.createdAt).toLocaleString();
+    const shortTime = new Date(e.createdAt).toLocaleString(undefined, { dateStyle: 'short', timeStyle: 'short' });
+    tag.textContent = `${e.type.toUpperCase()} • ${shortTime}`;
+    tag.title = fullTime;
 
     left.appendChild(desc);
     left.appendChild(tag);
 
     const right = document.createElement("div");
-    // allow right side to wrap on ultra-small screens
-    right.className = "flex flex-wrap items-center justify-end gap-2";
+        right.className = "flex items-center gap-2 mt-2 sm:mt-0 sm:justify-end sm:flex-shrink-0 w-full sm:w-auto justify-center";
 
     const amount = document.createElement("div");
-    // slightly smaller min-width to fit very narrow viewports
-    amount.className = `text-right font-bold ${e.type === 'income' ? 'text-emerald-400' : 'text-rose-400'} min-w-[64px]`;
-    amount.textContent = (e.type === "expense" ? "-" : "+") + formatMoney(e.amount);
+        // apply min-width on small+ screens only so it won't force overflow on very small widths
+        // prevent sign and amount from wrapping separately
+        amount.className = `font-bold ${e.type === 'income' ? 'text-emerald-400' : 'text-rose-400'} sm:min-w-[64px] whitespace-nowrap sm:text-right text-center`;
+        const sign = e.type === "expense" ? "-" : "+";
+        amount.innerHTML = sign + "\u00A0" + formatMoney(e.amount);
 
     const buttons = document.createElement("div");
-    buttons.className = "flex items-center gap-2";
+        buttons.className = "flex items-center gap-2 flex-wrap";
 
     const editBtn = document.createElement("button");
     editBtn.className = "px-2 py-1 rounded-md border border-sky-500 text-slate-100 bg-transparent text-xs";
