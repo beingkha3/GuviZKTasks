@@ -27,3 +27,6 @@ dist/
 
 # Ignore local project folder that's not part of the current task
 /guvi_task/
+
+# Ignore Task-fail working folder
+/Task-fail/
