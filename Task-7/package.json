@@ -1,5 +1,5 @@
 {
-  "name": "guvi-cart-app",
+  "name": "fake-store-api-cart-app",
   "version": "1.0.0",
   "description": "A ReactJS shopping cart application with Fake Store API",
   "main": "src/index.js",

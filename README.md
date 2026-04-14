@@ -10,6 +10,8 @@ This repository contains tasks and projects completed as part of the Guvi ZK (Ze
 - **Task-4/**
 - **Task-5/**
 - **Task-6/**
+- **Task-7/**
+- **Task-8/**
 
 ## Technologies Used
 
