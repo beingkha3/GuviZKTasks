@@ -22,8 +22,6 @@ GuviZKTasks-main.zip
 
 # Common build/cache folders
 .cache/
-build/
-dist/
 
 # Ignore local project folder that's not part of the current task
 /guvi_task/
