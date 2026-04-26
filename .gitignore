@@ -32,3 +32,6 @@ GuviZKTasks-main.zip
 
 # Ignore Task-9 zip files
 /Task-9/*.zip
+
+# Ignore Task-10 zip files
+/Task-10/*.zip
