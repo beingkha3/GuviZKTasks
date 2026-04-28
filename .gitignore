@@ -12,11 +12,17 @@ GuviZKTasks-main.zip
 # Ignore everything by default, but allow Task-* folders
 /*
 !/Task-*/
+!/project1/
+!/project2/
 !.gitignore
 !README.md
 
 # Node modules everywhere
 **/node_modules/
+
+# Common frontend build output folders
+**/dist/
+**/build/
 
 # Keep Task-7 development deps out of the repo
 /Task-7/node_modules/
