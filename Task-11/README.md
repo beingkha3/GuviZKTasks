@@ -56,6 +56,18 @@ npm start
 
 The server starts on port 5000 by default.
 
+## How to Use with Postman
+
+1. Open Postman.
+2. Click **Import** → upload `postman_collection.json` from this folder.
+3. Set `{{base_url}}` to your deployed URL (`https://task-11-vmjw.onrender.com`).
+4. Run the requests in order:
+   - **Create Recipe** → auto-saves the recipe `_id` as `{{recipe_id}}`
+   - **Get All Recipes** → lists every recipe
+   - **Get Recipe By ID** → fetches a single recipe
+   - **Update Recipe** → updates fields (servings, prep time, etc.)
+   - **Delete Recipe** → removes the recipe
+
 ## Deployment
 
-Deployed on Render.
+Deployed on Render: [https://task-11-vmjw.onrender.com](https://task-11-vmjw.onrender.com)
