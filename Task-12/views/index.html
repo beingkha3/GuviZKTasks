@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auth API</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
+    h1 { color: #2563eb; }
+    code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { text-align: left; padding: 10px; border-bottom: 1px solid #e2e8f0; }
+    th { background: #f8fafc; }
+    .method { font-weight: bold; }
+    .post { color: #2563eb; }
+    .get { color: #16a34a; }
+    .badge { background: #fbbf24; padding: 2px 6px; border-radius: 4px; font-size: 0.8em; }
+  </style>
+</head>
+<body>
+  <h1>Auth API</h1>
+  <p>User authentication and authorization with JWT Bearer tokens.</p>
+
+  <h2>Endpoints</h2>
+  <table>
+    <tr><th>Method</th><th>Endpoint</th><th>Auth</th><th>Description</th></tr>
+    <tr><td class="method post">POST</td><td>/api/auth/register</td><td>-</td><td>Register a new user</td></tr>
+    <tr><td class="method post">POST</td><td>/api/auth/login</td><td>-</td><td>Login, returns JWT token</td></tr>
+    <tr><td class="method get">GET</td><td>/api/auth/me</td><td><span class="badge">Bearer</span></td><td>Get current user profile</td></tr>
+  </table>
+
+  <h2>User Schema</h2>
+  <pre><code>{
+  "username": "String (required, unique)",
+  "email": "String (required, unique)",
+  "password": "String (required, min 6 chars)"
+}</code></pre>
+</body>
+</html>
