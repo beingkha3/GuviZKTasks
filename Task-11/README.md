@@ -58,15 +58,28 @@ The server starts on port 5000 by default.
 
 ## How to Use with Postman
 
-1. Open Postman.
-2. Click **Import** → upload `postman_collection.json` from this folder.
-3. Set `{{base_url}}` to your deployed URL (`https://task-11-vmjw.onrender.com`).
-4. Run the requests in order:
+1. Open Postman → **Import** → upload `postman_collection.json` from this folder.
+2. Set `{{base_url}}` to your deployed URL (`https://task-11-vmjw.onrender.com`).
+3. Run the requests in order:
    - **Create Recipe** → auto-saves the recipe `_id` as `{{recipe_id}}`
    - **Get All Recipes** → lists every recipe
    - **Get Recipe By ID** → fetches a single recipe
    - **Update Recipe** → updates fields (servings, prep time, etc.)
    - **Delete Recipe** → removes the recipe
+
+### Publishing Docs
+
+To generate a public documentation link (required for submission):
+
+1. Open [Postman web](https://www.postman.com) and ensure you're logged in.
+2. Import `postman_collection.json` if not already done.
+3. Click the **"..."** (more actions) next to the **Recipes API** collection.
+4. Select **"Publish Docs"**.
+5. Copy the generated link and paste it below.
+
+> **Published docs link:** `[PASTE YOUR LINK HERE]`
+
+Example: `https://documenter.getpostman.com/view/54783568/2sAYQcDdMy`
 
 ## Deployment
 
