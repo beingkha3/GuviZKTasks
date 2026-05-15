@@ -56,30 +56,13 @@ npm start
 
 The server starts on port 5000 by default.
 
-## How to Use with Postman
+## Postman Documentation
 
-1. Open Postman → **Import** → upload `postman_collection.json` from this folder.
-2. Set `{{base_url}}` to your deployed URL (`https://task-11-vmjw.onrender.com`).
-3. Run the requests in order:
-   - **Create Recipe** → auto-saves the recipe `_id` as `{{recipe_id}}`
-   - **Get All Recipes** → lists every recipe
-   - **Get Recipe By ID** → fetches a single recipe
-   - **Update Recipe** → updates fields (servings, prep time, etc.)
-   - **Delete Recipe** → removes the recipe
+Published docs (all 5 endpoints with sample requests/responses):
 
-### Publishing Docs
+[https://www.postman.com/beingkha3-2637696/guvi-task-11/collection/3l9o29z/recipes-api](https://www.postman.com/beingkha3-2637696/guvi-task-11/collection/3l9o29z/recipes-api?action=share&creator=54783568)
 
-To generate a public documentation link (required for submission):
-
-1. Open [Postman web](https://www.postman.com) and ensure you're logged in.
-2. Import `postman_collection.json` if not already done.
-3. Click the **"..."** (more actions) next to the **Recipes API** collection.
-4. Select **"Publish Docs"**.
-5. Copy the generated link and paste it below.
-
-> **Published docs link:** `[PASTE YOUR LINK HERE]`
-
-Example: `https://documenter.getpostman.com/view/54783568/2sAYQcDdMy`
+Set `{{base_url}}` to `https://task-11-vmjw.onrender.com` and run requests in order: Create → auto-saves `recipe_id` → Get All → Get By ID → Update → Delete.
 
 ## Deployment
 
