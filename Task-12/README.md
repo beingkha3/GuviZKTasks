@@ -71,7 +71,7 @@ npm start
 
 Published docs with all endpoints and examples:
 
-https://www.postman.com/beingkha3-2637696/guvi-task-11/documentation/j0kwq5d/auth-api
+https://www.postman.com/beingkha3-2637696/guvi-task-11/collection/6owhft0/auth-api
 
 Set `{{base_url}}` to your deployed Render URL. Run Register or Login first to auto-save the `{{token}}`, then Get Profile uses it automatically.
 
