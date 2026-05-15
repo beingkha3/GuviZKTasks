@@ -71,10 +71,10 @@ npm start
 
 Published docs with all endpoints and examples:
 
-https://www.postman.com/beingkha3-2637696/guvi-task-12/collection/<collection-id>
+https://www.postman.com/beingkha3-2637696/guvi-task-11/documentation/j0kwq5d/auth-api
 
 Set `{{base_url}}` to your deployed Render URL. Run Register or Login first to auto-save the `{{token}}`, then Get Profile uses it automatically.
 
 ## Deployment
 
-Deployed on Render: [https://task-12.onrender.com](https://task-12.onrender.com)
+Deployed on Render: [https://task-12-p7l1.onrender.com](https://task-12-p7l1.onrender.com)

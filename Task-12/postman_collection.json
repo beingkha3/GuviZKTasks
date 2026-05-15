@@ -2,12 +2,12 @@
   "info": {
     "name": "Auth API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": "User authentication and authorization API with JWT Bearer tokens.\n\nBase URL: https://task-12.onrender.com"
+    "description": "User authentication and authorization API with JWT Bearer tokens.\n\nBase URL: https://task-12-p7l1.onrender.com"
   },
   "variable": [
     {
       "key": "base_url",
-      "value": "https://task-12.onrender.com",
+      "value": "https://task-12-p7l1.onrender.com",
       "type": "string"
     },
     {
