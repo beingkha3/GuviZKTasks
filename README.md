@@ -11,7 +11,7 @@ This repository contains tasks and projects completed as part of the Guvi ZK (Ze
 - **Task-5/**
 - **Task-6/**
 - **Task-7/**
-- **Task-8/**
+- **Task-8/** — Password Reset (MERN: React + Bootstrap 5, Node/Express, MongoDB Atlas, deployed on Render)
 - **Task-9/**
 - **Task-10/**
 - **Task-11/** — Recipes CRUD API (Node.js, Express, Mongoose)
@@ -43,6 +43,7 @@ This repository contains tasks and projects completed as part of the Guvi ZK (Ze
 - [Task-10](Task-10/) — added `zen_class_mongodb.js` (commit 23c677e)
 - [Task-11](Task-11/) — added Recipes CRUD API with Node.js, Express, Mongoose + Postman collection (commit 3ef2ee1)
 - [Task-12](Task-12/) — added Auth API with JWT Bearer tokens, registration, login, protected routes (latest commit)
+- [password-reset](password-reset/) — full MERN password-reset flow: secure token hashing, bcrypt, rate limiting, ethereal transport, deployed on Render. [Postman collection](https://www.postman.com/beingkha3-2637696/password-reset/collection/z2gaak9/password-reset?action=share&creator=54783568&active-environment=54783568-ba0d9c98-ac1e-46a2-854a-4354d4de72cc)
 - [project1](project1/) — published as a separate GitHub repo: https://github.com/beingkha3/project1
 - [project2](project2/) — published as a separate GitHub repo: https://github.com/beingkha3/project2
 
