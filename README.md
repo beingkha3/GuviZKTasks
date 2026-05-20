@@ -43,8 +43,8 @@ This repository contains tasks and projects completed as part of the Guvi ZK (Ze
 - [Task-10](Task-10/) — added `zen_class_mongodb.js` (commit 23c677e)
 - [Task-11](Task-11/) — added Recipes CRUD API with Node.js, Express, Mongoose + Postman collection (commit 3ef2ee1)
 - [Task-12](Task-12/) — added Auth API with JWT Bearer tokens, registration, login, protected routes (latest commit)
-- [project1](project1/) — added React/Vite project files (commit c9c3949)
-- [project2](project2/) — added React/Vite project files (commit c9c3949)
+- [project1](project1/) — published as a separate GitHub repo: https://github.com/beingkha3/project1
+- [project2](project2/) — published as a separate GitHub repo: https://github.com/beingkha3/project2
 
 Zip files in `Task-9` and `Task-10` are ignored via the repository `.gitignore`.
 
