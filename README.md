@@ -11,7 +11,7 @@ This repository contains tasks and projects completed as part of the Guvi ZK (Ze
 - **Task-5/**
 - **Task-6/**
 - **Task-7/**
-- **Task-8/** — Password Reset (MERN: React + Bootstrap 5, Node/Express, MongoDB Atlas, deployed on Render)
+- **Task-8/**
 - **Task-9/**
 - **Task-10/**
 - **Task-11/** — Recipes CRUD API (Node.js, Express, Mongoose)
